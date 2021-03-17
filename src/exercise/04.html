@@ -3,6 +3,7 @@
 
 <body>
   <div id="root"></div>
+   <div style = "margin-top: 20px; background-color: blue;">TESTANDO</div>
   <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
@@ -43,6 +44,16 @@
         )
     }
 
+    function Soma ({num1, num2}){
+        return(
+          <React.Fragment>
+            
+            <p> O resultado da soma é </p>
+            <div>{num1 + num2}</div>
+          </React.Fragment>
+        )
+    }
+
     //RENDERIZAR é: Processar um código JS para gerar elementos HTML
 
     //Usando o componente personalizado representado pela função Message
@@ -52,6 +63,7 @@
     // de tags HTML comuns
     element = (
         <div className = "container">
+            <Soma num1 = "100" num2 = "200"/>
             <Message subject = "mamãe" greeting="Alô" />
             <Message greeting = "Bem-vindo" subject = "humano" />
             {Message({subject: 'Douglas', greeting: 'Olá'})}
